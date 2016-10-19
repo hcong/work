@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>对话框</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style: none;
+        }
+        body {
+           font-family: 微软雅黑;
+        }
+        .masker {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #0044cc;
+            opacity: 0.3;
+        }
+        .my-dlg {
+            width: 588px;
+            height: 470px;
+            background-color: #ffffff;
+            position: absolute;
+            z-index: 10;
+            top: 50%;
+            left: 50%;
+            margin-left: -294px;
+            margin-top: -235px;
+            border-radius: 5px;
+        }
+        .dlg-header {
+            height: 56px;
+            line-height: 56px;
+            padding-left: 30px;
+            border-bottom: 1px solid #999;
+        }
+        .dlg-cnt .row {
+            height: 60px;
+            line-height: 60px;
+            padding: 0 50px 0 38px;
+        }
+        .gary-row {
+            background-color: #f6f4f4;
+        }
+        .row input {
+            width: 139px;
+            height: 33px;
+            border: ;
+        }
+        .row select {
+            width: 168px;
+            height: 36px;
+        }
+        .row label {
+            width: 72px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <button>show dialog</button>
+    <div class="my-dlg">
+        <div class="dlg-header">北京**有限公司</div>
+        <div class="dlg-cnt">
+            <div class="row gary-row">
+                <label for="">月收款：</label>
+                <input type="text">
+                <label for="">收款方式：</label>
+                <select name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                </select>
+            </div>
+            <div class="row">
+                <label for="">收款总金额：</label>
+                <input type="text">
+                <label for="">其他收费：</label>
+                <select name="" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                    <option value="">4</option>
+                </select>
+            </div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+            <div class="row"></div>
+        </div>
+    </div>
+    <div class="masker"></div>
+
+    <script src="jquery-3.1.0.js"></script>
+    <script>
+        !function(){
+            $('button').on('click',function(){
+
+            });
+
+
+
+
+        }();
+
+
+
+    </script>
+</body>
+</html>

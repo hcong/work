@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>带进度条的按钮</title>
+    <style>
+        .progress-btn{
+            width: 200px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            color: #ffffff;
+            background-color:pink;
+            margin:0 auto;
+            border-radius: 3px;
+            cursor: pointer;
+            position: relative;
+        }
+        .inner{
+            width: 0;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: crimson;
+            opacity: 0.2;
+            filter: alpha(opacity=20);
+        }
+    </style>
+</head>
+<body>
+    <div id="progressBtn" class="progress-btn">
+        <div class="inner"></div>
+        提交
+    </div>
+
+
+    <script>
+
+        var progressBtn =document.getElementById('progressBtn'),
+                inner = progressBtn.getElementsByTagName('div')[0],
+                //得到Btn里面的div ，因得到的是类数组的结构，须加索引
+                counter = 0,
+                timer;
+
+        progressBtn.onclick = function (){
+                timer = setInterval(function(){
+                    counter++;
+                    inner.style.width = counter*10+'%';
+                    if(counter==10){
+                        clearInterval(timer); //一定记得要有定时器
+                    }
+                },1000)
+        }
+    </script>
+</body>
+</html>

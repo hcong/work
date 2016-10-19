@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>动态生成下拉菜单</title>
+</head>
+<body>
+    <select id="mySel">
+        <option value="0">请选择</option>
+    </select>
+    <button id="genBtn">生成</button>
+
+
+    <script>
+        var arr = ["李红聪","小悦悦","秦海波","郑志康","郑帅","张薇","刁海建"];
+        var genBtn = document.getElementById('genBtn');
+        var mySel = document.getElementById('mySel');
+
+        genBtn.onclick = function(){
+            var optArr = ['<option value="0">请选择</option>'];
+            var len = arr.length;
+
+            for (var i=0;i<len;i++){
+                optArr.push('<option>',arr[i],'<option>');
+            }
+
+            mySel.innerHTML = optArr.join('');
+        };
+
+    </script>
+</body>
+</html>

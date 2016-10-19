@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>className兼容问题</title>
+</head>
+<body>
+    <div class="test">黑猫警长</div>
+    <span class="test test2">美少女战士</span>
+    <p class="test">蜡笔小新</p>
+
+    <div id="target">
+        <div class="test test3">野原新之助</div>
+        <span class="test">鸣人</span>
+        <span>佐助</span>
+    </div>
+
+    <div>猫和老鼠</div>
+
+    <script>
+        /*var tests = document.getElementsByClassName('test');
+        for (var i= 0; i<tests.length; i++){
+            tests[i].style.fontSize='20px';
+            tests[i].style.backgroundColor='pink';
+        }*/
+        var tests = getElementByCls('test');
+        console.log(tests);
+
+        function getElementByCls(clsName){
+            if(document getElementByClassName）{
+                console.log('not ie8');
+            }else {
+                console.log('ie8');
+            }
+        }
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>没有bug的时钟</title>
+    <style>
+        #clock{
+            color: deeppink;
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <span id="clock">00:00:00</span>
+
+
+    <script>
+        /*只new一次对象方案*/
+
+        //var initClock = function(){
+            var d = new Date(),
+                h, m, s= d.getSeconds(),
+                clock = document.getElementById('clock');
+
+            var abc = function(){
+                h = d.getHours();
+                m = d.getMinutes();
+                s = d.getSeconds();
+                clock.innerHTML = fill0(h) + ":" + fill0(m) + ":" + fill0(s);
+                d.setSeconds(++s);
+            };
+
+            setInterval(abc,1000);
+        //};
+        var fill0 = function(num){
+            return num < 10 ? '0' + num : num;
+            /*if (num<10){
+             return '0' + num;
+             }return num*/
+        };
+        //initClock();
+    </script>
+</body>
+</html>

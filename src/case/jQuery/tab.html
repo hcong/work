@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        ul li {
+            cursor: pointer;
+            list-style: none;
+            float: left;
+            border: 1px solid pink;
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            margin: 0 10px ;
+        }
+        .on {
+            background-color: pink;
+            color: #ffffff;
+        }
+        .clear{
+            clear: both;
+        }
+        .tab > div {
+            width: 344px;
+            border: 1px solid pink;
+            height: 100px;
+            display: block;
+            margin-left: 50px;
+            margin-top: -16px;
+            overflow: hidden;
+        }
+        .tab > div > div {
+            height: 100px;
+            width: 344px;
+        }
+        .tab2>ul li {
+            border: 1px solid green;
+        }
+        .tab2 .on {
+            background-color: green;
+        }
+        .tab2 > div {
+            border: 1px solid green;
+        }
+    </style>
+    <script src="jquery-3.1.0.js"></script>
+    <script>
+        function redderTabByClass(className){
+            var $target = $(className),
+                    $lis = $target.find('ul>li'),
+                    $divs = $target.find('div>div');
+            $lis.on('click',function(){
+                var $this = $(this),
+                        index = $this.index();
+                $this.addClass('on').siblings('.on').removeClass('on');
+                $divs.eq(index).show().siblings().hide();
+            });
+        }
+        renderTabByClass('.tab');
+    </script>
+</head>
+<body>
+    <div class="tab">
+        <ul>
+            <li class="on">中国</li>
+            <li>美国</li>
+            <li>英国</li>
+            <div class="clear"></div>
+        </ul>
+        <div>
+            <div>中国！</div>
+            <div>美国！</div>
+            <div>英国！</div>
+        </div>
+    </div>
+   <!-- <br>
+    <br>
+    <hr>
+    <hr>
+    <div class="tab">
+        <ul>
+            <li class="on">中国</li>
+            <li>美国</li>
+            <li>英国</li>
+            <div class="clear"></div>
+        </ul>
+        <div>
+            <div>中国！</div>
+            <div>美国！</div>
+            <div>英国！</div>
+        </div>
+    </div>-->
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style:none;
+        }
+        body{
+            background-color: #b2dba1;
+        }
+        .accordion{
+            background-color: #e7c3c3;
+            width: 360px;
+            margin: 50px auto;
+            border-radius: 5px;
+        }
+        .accordion ul li {
+            background-color: yellow;
+            color: red;
+            border-bottom: 1px solid #ffffff;
+        }
+        .accordion ul li:hover {
+            background-color: green;
+        }
+        .item ul {
+            display: none;
+        }
+        h1 {
+            border-bottom: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <div class="accordion">
+        <div class="item">
+            <h1>科目</h1>
+            <ul>
+                <li>数学</li>
+                <li>语文</li>
+                <li>英语</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h1>老师</h1>
+            <ul>
+                <li>李老师</li>
+                <li>王老师</li>
+                <li>张老师</li>
+            </ul>
+        </div>
+        <div class="item">
+            <h1>时间</h1>
+            <ul>
+                <li>周一</li>
+                <li>周二</li>
+                <li>周三</li>
+            </ul>
+        </div>
+
+
+    </div>
+
+<script src="jquery-3.1.0.js"></script>
+<script>
+    function accordion (){
+        var $acc=$('.accordion');
+        $h1=$acc.find('h1');
+        $h1.on('click', function () {
+           var $this=$(this),
+           $ul=$this.parent().find('ul');
+        $ul.slideToggle();
+        $this.parent().siblings().find('ul').hide()
+        });
+    }
+    accordion();
+
+
+</script>
+</body>
+</html>

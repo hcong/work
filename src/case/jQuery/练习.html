@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li {
+            list-style: none;
+        }
+
+        .p-div{
+            width: 500px;
+            margin: 0 auto;
+        }
+        .p-div>div {
+            border: 1px solid red;
+            background-color: #fffccc;
+        }
+        .s-div-h{
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+        }
+        .s-div-l{
+            padding: 10px;
+            text-align: center;
+            display: none;
+        }
+      /* #animDiv {
+           width: 100px;
+           height: 100px;
+           background-color: red;
+           position: relative;
+       }*/
+
+       /*.my-tab {
+           width: 500px;
+           height: 300px;
+           margin: 20px auto;
+       }
+
+        .tab-header li {
+            float: left;
+            width: 100px;
+            height: 36px;
+            line-height: 36px;
+            text-align: center;
+            background-color: #0044cc;
+            color: white;
+        }
+        .tab-header li.active {
+            background-color: crimson;
+            color: black;
+        }
+        .tab-ct{
+            height: 260px;
+        }
+        .tab-ct div{
+             height: 260px;
+             background-color: green;
+            display: none;
+         }
+        .tab-ct div.active{
+            display: block;
+        }*/
+
+
+
+    </style>
+</head>
+<body>
+
+    <div class="p-div">
+        <div class="s-div-h">显示/隐藏面板</div>
+        <div class="s-div-l">啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+            啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+            啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦啦
+            啦啦啦啦啦</div>
+    </div>
+
+   <!-- <button class="my-btn">点我一下</button>
+    <div id="animDiv">我是红色</div>-->
+
+   <!-- tab切换-->
+
+  <!--<div class="my-tab">
+      <div class="tab-header">
+          <ul>
+              <li class="active">例子1</li>
+              <li>例子2</li>
+              <li>例子3</li>
+              <div style="clear: both"></div>
+          </ul>
+      </div>
+      <div class="tab-ct">
+          <div class="active">例子1内容</div>
+          <div>例子2内容</div>
+          <div>例子3内容</div>
+      </div>
+  </div>-->
+
+    <!--<div class="my-div">
+        <ul>
+            <li>我是山间一滴水</li>
+            <li><input type="text"></li>
+        </ul>
+    </div>
+    <button class="my-btn">按钮</button>-->
+
+
+ <script src="jquery-3.1.0.js"></script>
+ <script>
+!function(){
+    //一班//////////////
+
+    $('.s-div-h').on('click',function(){
+        var $this = $(this);
+       $('.s-div-l').show();
+        console.log($('.s-div-l').attr('style'));
+      // $('.s-div-l').slideToggle();
+        // $('.s-div-l').fadeToggle();
+     //$('.s-div-l').hide();
+     //$('.s-div-l').toggle();
+     });
+
+    /* $('.my-btn').on('click',function(){
+     var $div =  $('#animDiv');
+     $div.animate({
+     left:'250px',
+     top:'200px',
+     opacity:0.5,
+     width:'200px',
+     height:'200px',
+     fontSize:'88px'
+     });
+     $div.animate({
+     fontSize:'88px'
+     });
+     });*/
+
+   /* $('.my-tab .tab-header li').on('click',function(){
+        var $this = $(this);
+        var index = $this.index();
+        $this.addClass('active').siblings().removeClass('active');
+        $('.tab-ct div').eq(index).show().siblings().hide();
+    });*/
+
+    /*$('.my-btn').on('click',function(){
+    var $myDiv = $('.my-div');
+    //console.log($myDiv.html()); //innerHTML
+   // console.log($myDiv.text());  //innerText
+   // console.log($myDiv.find('input').val());  //value
+    // $myDiv.html('<h1>我叫李红聪</h1>');
+  //  $myDiv.text('123');
+  //  $myDiv.find('input').val('我叫李红聪');
+
+    });*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    ///////////////////
+    /* $('#navMenu li').on('click', function () {
+     var $this =$(this);
+     $this.addClass('on').siblings().removeClass('on');
+     });*/
+
+    /* var $btn = $('button');
+     $btn.on('click', function () {
+     //alert($('#txt').val());
+     //$('#txt').val(123);
+     $('#txt').val('')
+     });*/
+
+
+    /* $('.header').on('click',function(){
+
+     /!*if(this.innerHTML == '显示'){
+     this.innerHTML = '隐藏';
+     }else {
+     this.innerHTML = '显示';
+     }*!/
+     // var $this = $(this);
+     var $content = $('.content');
+     $content.toggleClass('show');
+     if ( $content.hasClass('show')){
+     this.innerHTML='隐藏';
+     }else {
+     this.innerHTML='显示';
+     }
+     });
+     */
+
+    /* var myBtn = document.getElementById('myBtn');
+     console.log(myBtn);*/
+    // $('#myBtn').css('background-color','pink');
+
+    /*var button = document.getElementById('myBtn');
+     button.title = '123';*/
+    /*$('span').attr('title','456');*/
+
+    /* var span = document.getElementsByTagName('span');
+     for (var i= 0;i<span.length;i++){
+     span[i].title = '789';
+     }*/
+    //   $('#myBtn').removeAttr('title');
+
+    // $('#myBtn').removeClass('red');
+}();
+
+
+
+ </script>
+</body>
+</html>

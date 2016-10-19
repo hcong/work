@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手风琴菜单2</title>
+    <style>
+        body{
+            background-color: pink;
+        }
+        .accordion{
+            width: 300px;
+            background-color: #ffffff;
+            margin: 50px auto;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        .accordion ul {
+            display: none;
+        }
+        .accordion ul li {
+            list-style: none;
+            height: 35px;
+            line-height: 35px;
+            background-color: #999;
+        }
+        .accordion ul li:hover{
+            background-color: red;
+        }
+        .accordion .title {
+            background-color: green;
+            color: #fff;
+            text-indent: 10px;
+        }
+        .accordion .title p {
+            height: 35px;
+            line-height: 35px;
+            cursor: pointer;
+            margin: 0px;
+        }
+     </style>
+
+</head>
+<body>
+    <div class="accordion">
+        <div class="title">
+            <p>html课程</p>
+            <ul>
+                <li>html标签</li>
+                <li>html属性</li>
+                <li>html框架</li>
+            </ul>
+        </div>
+        <div class="title">
+            <p>css课程</p>
+            <ul>
+                <li>css定位</li>
+                <li>盒子模型</li>
+                <li>css进阶</li>
+            </ul>
+        </div>
+        <div class="title">
+            <p>js课程</p>
+            <ul>
+                <li>js语句</li>
+                <li>数据类型</li>
+                <li>css进阶</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="jquery-3.1.0.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            var $title=$('.accordion div.title');
+            $title.on('click',function(){
+                var $this=$(this);
+                $this
+                        .find('p').toggleClass('red')
+                        .end()
+                        .find('ul').slideToggle()
+                        .end()
+                        .siblings()
+                        .find('p.red').removeClass('red')
+                        .end()
+                        .find('ul:visible').slideUp();
+            });
+        });
+    </script>
+</body>
+</html>

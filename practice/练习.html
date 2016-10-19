@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #box{
+            font-size: 24px!important;
+            color: blue;
+        }
+        p{
+            font-size: 12px;
+            color: yellow;
+        }
+        .txt{
+             font-size: 16px;
+             color: red;
+         }
+    </style>
+</head>
+<body>
+
+    <div id="box">
+        <p class="txt">哈哈</p>
+    </div>
+
+
+
+
+<script>
+    var point={
+        x:0,
+        moveTo: function (x) {
+            var moveX = function (x) {
+                this.x=x;
+            };
+            moveX(x);
+            console.log(this);
+        }
+    };
+    point.moveTo(20);
+</script>
+</body>
+</html>

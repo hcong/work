@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闪烁页面的标题</title>
+</head>
+<body>
+
+
+    <script src="helper.js"></script>
+    <script>
+        function flashTitle (){
+            var title = document.title;
+            setInterval(function(){
+                if(document.title=="WBC"){
+                    document.title = title;
+            }else {
+                    document.title = "WBC"
+            }
+            },500);
+        }
+        flashTitle();
+    </script>
+</body>
+</html>

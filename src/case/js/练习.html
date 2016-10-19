@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>练习</title>
+    <style>
+        ul#awesome{
+            color: red;
+        }
+        ul.shoppin-list li.favorite span{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <ul class="shoppin-list" id="awesome">
+        <li><span>milk</span></li>
+        <li class="favorite" id="must-buy">
+            <span class="hight">saugage</span>
+        </li>
+    </ul>
+    <br>
+    <br>
+    <table id="mytable" border="1">
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+    </table>
+
+
+    <script src="jquery-3.1.0.js"></script>
+<script>
+    /*var  mytable = document.getElementById('mytable');
+    var tr = mytable.getElementsByTagName('tr');
+    var td = tr[1].getElementsByTagName('td');
+    td[1].innerHTML = 55;
+    td[1].style.backgroundColor='red';*/
+
+    var $i = $('td:eq(1)','tr:eq(1)');
+        $i.html(55).css('background','red');
+
+    /*$('td:eq(4)').html('55').css('background','red');*/
+
+   /* function(date){
+        var Date = new date();
+             Y = date.getFullYear();
+             M = date.getMonth();
+             D = date.getDate();
+             H = date.getHours();
+             m = date.getMinutes();
+             S = date.getSeconds();
+        var timer = Y+":"+M+":"+D+":"+H+"+"+m+":"+S;
+        console.log(timer);
+    }
+    date();*/
+</script>
+</body>
+</html>
